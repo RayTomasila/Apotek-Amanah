@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produk</title>
+
+  <link rel="stylesheet" href="../public/css/general.css">
+  <link rel="stylesheet" href="../public/css/admin/navbar.css">
+  <link rel="stylesheet" href="../public/css/admin/produk.css">
+
+  <script async src="../public/js/admin.js"></script>
+
+  <!-- CSS Choices -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+  <!-- JS Choices -->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+  
+</head>
+<body>
+  <nav class="navbar">
+    <div class="topNav">
+      <li><a href="#">Admin</a></li>
+        <li>
+          <a href="#">
+            <img src="../public/assets/admin/navbar/admin-icon.png" alt="Logo">
+          </a>
+        </li>
+    </div>
+
+    <div class="sidebar">
+      <div id="sidebar-arrow" class="sidebar-arrow">
+        <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="15" cy="15" r="14" class="circle"/>
+          <g class="arrow-group">
+            <path d="M11 23.5L20.5 15L11 7" class="arrow"/>
+          </g>
+        </svg>
+      </div>      
+
+      <div class="sidebar-logo">
+        <a href="#dashboard">
+        <img src="../public/assets/admin/navbar/logo-hijau.png" alt="Logo">
+        </a><span>Apotek Amanah</span> 
+      </div>
+
+      <ul>
+        <li>
+          <a href="dashboard.html" class="sideLinkToggle">
+            <img src="../public/assets/admin/navbar/dashboard-icon.png" alt="">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="produk.html" class="sideLinkToggle">
+            <img src="../public/assets/admin/navbar/produk-icon.png" alt="">
+            <span>Produk</span>
+          </a>
+        </li>
+        <li>
+          <a href="transaksi.html" class="sideLinkToggle">
+            <img src="../public/assets/admin/navbar/transaksi-icon.png" alt="">
+            <span>Transaksi</span>
+          </a>
+        </li>
+        <li>
+          <a href="riwayat.html" class="sideLinkToggle">
+            <svg width="29" height="23" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg" class="riwayat-icon">
+              <path d="M25.5455 10H1C1 10 1 10.6716 1 11.5V20C1 20.9327 1.94044 22 3 22L26 22C27 22 28 21 28 20V10C28 10 26.9011 10 25.5455 10Z" fill="black" stroke-width="1.4"/>
+              <path d="M25.5455 10H1C1 10 1 10.6716 1 11.5V20C1 20.9327 1.94044 22 3 22L26 22C27 22 28 21 28 20V10C28 10 26.9011 10 25.5455 10Z" fill="black" stroke-width="1.4"/>
+              <path d="M1 10H25.5455C26.9011 10 28 10 28 10V20C28 21 27 22 26 22L3 22C1.94044 22 1 20.9327 1 20M1 10V20M1 10C1 10 1 10.6716 1 11.5V20" stroke="#FBFBFB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="riwayat-icon-stroke"/>
+              <path d="M26 1H3C2 1 1 2 1 3V10H3.45455H25.5455H28V3C28 2 27 1 26 1Z" fill="black" stroke="#FBFBFB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="riwayat-icon-stroke"/>
+              </svg>              
+            <span>Laporan Transaksi</span>
+          </a>
+        </li>
+      </ul>
+      
+      
+    </div>
+  </nav>
+
+  <main class="container" id="main-content">
+    <section class="tambah-produk-top">
+    <div class="tambah-produk-top-left">
+      <a href="produk.html">
+        <img src="../public/assets/admin/produk/back-arrow-green.png" alt="Logo">
+      </a>
+      <div class="separator"></div>
+      <div class="page-title"><p>Tambah Produk</p></div>
+    </div>
+    </section>
+
+    <section class="form-produk-wrapper">
+      <div class="left-form">
+        <div class="form">
+          <p>Tipe Obat</p>
+          <select id="form-custom-dropdown" class="form-custom-dropdown">
+            <option value="obat">Obat</option>
+            <option value="alat">Alat Kesehatan</option>
+          </select>
+        </div>
+
+        <div class="form">
+          <p>Nama Obat/Alat Kesehatan</p>
+          <input type="text" placeholder="Nama Produk">
+        </div>
+
+        <div class="form">
+          <p>Kode Obat/Alat Kesehatan</p>
+          <input type="text" placeholder="Kode Produk">
+        </div>
+
+        <div class="form">
+          <p>Harga Beli</p>
+          <input type="number" placeholder="Harga beli Produk">
+        </div>
+
+        <div class="form">
+          <p>Harga Jual</p>
+          <input type="number" placeholder="Harga jual Produk">
+        </div>
+
+        <div class="form">
+          <p>Deskripsi Produk</p>
+          <textarea type="text" placeholder="Deskripsi singkat produk"></textarea>
+        </div>
+      </div>
+
+      <div class="middle-form">
+        <div class="form">
+          <p>Stok</p>
+          <input type="number" placeholder="Jumlah Stok">
+        </div>
+
+        <div class="form">
+          <p>Tanggal Kadaluarsa</p>
+          <input type="date" placeholder="Tanggal Kadaluarsa">
+        </div>
+
+        <div class="form">
+          <p>Kategori Obat/Alat Kesehatan</p>
+          <input type="text" placeholder="">
+        </div>
+
+        <div class="form">
+          <p>Satuan</p>
+          <input type="text" placeholder="">
+        </div>
+
+        <div class="form">
+          <p>Jenis</p>
+          <input type="text" placeholder="">
+        </div>
+
+        <div class="form">
+          <p>Petunjuk Penggunaan</p>
+          <textarea type="text" placeholder="Cara penggunaan obat atau alat kesehatan"></textarea>
+        </div>
+      </div>
+
+      <div class="right-form">
+        <div class="upload-img-container">            
+          <img src="../public/assets/admin/produk/upload-img-placehoder.png" alt="">
+        </div>
+        <div class="upload-file-input">
+          <input type="file">
+        </div>
+
+        <a href="" class="btn--simpan">
+          <p>Simpan</p>
+        </a>
+
+      </div>
+    </section>
+    
+
+
+  </main>
+</body>
+  
+  <script>
+    const choices = new Choices('#form-custom-dropdown', {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+    });
+  </script>
+
+
+</html>

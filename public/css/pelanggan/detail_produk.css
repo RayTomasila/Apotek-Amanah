@@ -1,0 +1,304 @@
+body {
+  padding: 0 3.5%;
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  background-color: var(--primary);
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  justify-self: center;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+}
+
+.left-content img {
+  max-width: 40px;
+  max-height: auto;
+}
+
+.separator {
+  height: 40px;
+  width: 2px;
+  background-color: white;
+  margin: 0 13px;
+}
+/* Nav Content */
+
+
+
+/* Detail Produk */
+.detail-produk {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.detail-left,
+.detail-middle,
+.detail-right {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.detail-left,
+.detail-right {
+  width: 537px;
+}
+
+.detail-middle {
+  width: 606px ;
+  margin: 0 45px;
+}
+  /* Left Content */
+  .detail-left .image-container {
+    width: 100%;
+    height: 436px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px #E5E5E5;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+
+  .detail-left .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .detail-left .redirect {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    border-radius: 6px;
+    margin-top: 24px;
+    padding: 0.9rem;
+    cursor: pointer;
+    border: solid 2px #E5E5E5;
+    color: var(--text);
+  }
+
+  .redirect .redirect-top {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .redirect-middle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .redirect-middle a {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .redirect-middle .redirect-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 75px;
+    margin-right: 0.8rem;
+    border-radius: 6px;
+    border: solid 2px #E5E5E5;
+    margin-bottom: 0.6rem;
+  }
+
+  .redirect-middle .redirect-img-container img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+  }
+
+  .redirect-middle button {
+    height: 42px;
+    width: 180px;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .btn-tokopedia {
+    background-color: #579B4E;
+  }
+
+  .btn-shopee {
+    background-color: #EE4E2C;
+  }
+
+  .redirect-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .redirect-bottom img {
+    max-width: 32px;
+    max-height: 32px;
+    margin-right: 0.9rem;
+  }
+
+  .redirect-bottom p {
+   font-size: 15px;
+   font-weight: 400;
+  }
+  /* Left Content */
+
+
+
+  /* Middle Content */
+  .detail-middle .detail-middle-top {
+    width: 100%;
+    margin-top: -10px;
+    padding: 0;
+  }
+
+  .detail-middle-top .nama-produk {
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 40px !important;
+  }
+
+  .detail-middle-top .harga-produk {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .detail-middle .detail-produk-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+
+  /* Detail Info Stok, Resep, Bpom */
+  .detail-produk-info {
+    border-top: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
+    padding: 0.9rem 0;
+    margin: 1rem 0;
+  }
+
+  .detail-produk-info .info-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 600;    
+  }
+
+  .detail-produk-info .info-container img {
+    width: 33px;
+    height: auto;
+    margin-right: 0.8rem;
+  }
+  /* Detail Info Stok, Resep, Bpom */
+
+
+  .detail-middle-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    margin-top: 1rem;
+  }
+
+  .detail-middle-bottom .deskripsi {
+    border-radius: 6px;
+    background-color: #FDFDFD;
+    box-shadow: var(--shadow);
+    min-height: 203px;
+    height: auto;
+    margin-bottom: 26px;
+    padding: 0.7rem;
+  }
+
+  .detail-middle-bottom .deskripsi span {
+    color: black;
+    font-size: 17;
+    font-weight: 500;
+  }
+
+  .detail-middle-bottom .deskripsi p {
+    margin-top: 10px !important;
+    line-height: 28px;
+    color: rgb(21, 21, 21);
+    font-size: 16px;
+    letter-spacing: 0.1px;
+  }
+
+
+  /* Detail Right */
+  .detail-produk .detail-right-content {
+    max-height: 340px;
+    overflow-y: scroll;
+    padding: 0.5rem 1.4rem 0 0.4rem;
+  }
+
+  .detail-produk-text {
+    margin-top: -10px;
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .detail-right-item {
+    height: 70px;
+    border-radius: 6px;
+    background-color: #FDFDFD;
+    box-shadow: var(--shadow);
+    padding: 0.5rem;
+    margin-bottom: 16px;
+  }
+
+  .detail-right-item span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  
+  /* Detail Right */
+
+
+/* Detail Produk */

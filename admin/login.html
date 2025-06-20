@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <link rel="stylesheet" href="../public/css/general.css">
+  <link rel="stylesheet" href="../public/css/admin/login.css">
+
+  <script async src="../public/js/admin.js"></script>
+
+</head>
+<body>
+  
+  <nav>
+    <div class="nav-icon">
+      <a href="#login">
+        <img src="../public/assets/admin/login/logo-putih.png" alt="Logo">
+        <span>Apotek Amanah</span> 
+      </a>
+    </div>
+  </nav>
+
+
+  <div class="login">
+    <div class="form-login">
+      <div class="form-left">
+        <img src="../public/assets/admin/login/login-left-image.png" alt="">
+        <h2>Sistem Manajemen Invetaris Apotek</h2>
+        <p>Kelola barang apotek Anda dengan efisien</p>
+      </div>
+
+      <div class="form-right">
+        <div class="logo">
+          <img src="../public/assets/admin/login/logo-hijau.png" alt="Logo">
+          <p class="amanah-logo-text">Amanah</p>
+          <p class="logo-text">Silahkan Masuk</p>
+        </div>
+
+        <form class="form-input">
+          <div class="input-container">
+            <div class="input-group">
+              <label for="username">Username</label>
+              <div class="input-wrapper">
+                <img src="../public/assets/admin/login/username-icon.png" alt="User Icon">              
+                <input type="text" id="username" name="username"
+                placeholder="Masukkan Username">
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="password">Password</label>
+              <div class="input-wrapper">
+                <img src="../public/assets/admin/login/password-icon.png" alt="password Icon">    
+                <input type="password" id="password" name="password" placeholder="Masukkan password">
+              </div>
+            </div>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="remember-me" name="remember-me">
+            <label for="remember-me">Ingat saya</label>
+          </div>
+
+          <a class="form-button" onclick="window.location.href='dashboard.html'">
+            <img src="../public/assets/admin/login/login-button-icon.png" alt="Login Button">Masuk
+          </a>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

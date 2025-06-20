@@ -1,0 +1,304 @@
+.produk-grid-wrapper {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.produk-grid-item {
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  min-height: 355px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 1.7rem 0.8rem 0.8rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.warning-resep {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  background-color: #C35E5F;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  color: white;
+}
+
+.produk-grid-item .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  height: 190px;
+  width: 190px;
+}
+
+.produk-grid-item img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.produk-info-top {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: bottom;
+}
+
+.produk-nama {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 24px;
+}
+
+
+.produk-info-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.produk-harga {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.produk-stok {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.produk-grid-item:hover {
+  transform: scale(1.02);
+}
+/* Halaman Produk */
+
+
+
+/* Tambah Produk */
+.tambah-produk-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2.3px solid rgb(108, 108, 108);
+}
+
+.tambah-produk-top-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.tambah-produk-top-left a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tambah-produk-top img {
+  max-width: 35px;
+  max-height: auto;
+}
+
+.separator {
+  height: 40px;
+  width: 2.3px;
+  background-color: var(--primary);
+  margin: 0 13px;
+}
+
+
+  /* Form */
+  .form-produk-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: auto;
+  }
+
+  .left-form,
+  .middle-form {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+    gap: 20px;
+  }
+
+  .right-form {
+    display: flex;
+    flex-direction: column;
+    width: 34%;
+  }
+
+
+  .form-produk-wrapper .form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .form-produk-wrapper .form p {
+    font-size: 18px;
+  }
+  
+  .form-produk-wrapper .form input,
+  .form-produk-wrapper .form textarea {
+    height: 45px;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 16px;
+    color: var(--text);
+    border: solid 2px #F2F2F2;
+    border-radius: 6px;
+    background-color: rgba(217, 217, 217, 0.07);
+  }
+
+  .form-produk-wrapper .form textarea {
+    height: 150px;
+    padding: 10px;
+  }
+  /* Form */
+
+
+  /* Custom File Upload */
+    .upload-img-container {
+      width: 100%;
+      border: 2px solid var(--primary);
+      border-radius: 6px;
+      width: 100%;
+      height: 470px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0 25px 0;
+      padding: 2rem;
+    }
+
+    .upload-file-input {      
+      width: 100%;
+      border: solid 2px var(--primary);
+      border-radius: 6px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="file"] {
+      max-width: 100%;
+      width: 100%;
+      min-width: 300px;
+      cursor: pointer;
+      overflow: hidden;
+      font-size: 16px;
+    }
+
+    input[type="file"]::-webkit-file-upload-button {
+      max-width: 100%;
+      padding: 10px 15px;
+      background-color: var(--primary); 
+      color: white;
+      border: none; 
+      border-radius: 6px;
+      
+      margin: 12px;
+      font-size: 16px; 
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    input[type="file"]::-webkit-file-upload-button:hover {
+      background-color: #639884d3;
+    }
+
+    .btn--simpan {
+      margin-top: 25px;
+      width: 100%;
+      height: 65px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+  /* Custom File Upload */
+
+/* Tambah Produk */
+
+
+/* Detail Produk */
+/* Bungkus keseluruhan dropdown */
+.choices {
+  width: 100%;
+}
+
+.choices__inner {
+  height: 45px;
+  padding: 0 10px;
+  color: var(--text);
+  font-size: 16px;
+  border: 2px solid #F2F2F2;
+  border-radius: 6px;
+  background-color: rgba(217, 217, 217, 0.07);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.choices[data-type*='select-one']::after {
+  content: '';
+  border-style: solid;
+  border-width: 6px 5px 0 5px;
+  border-color: #000 transparent transparent transparent;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.choices__list--dropdown {
+  border-radius: 6px;
+  border: 2px solid #F2F2F2;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.choices__item--selectable {
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.choices__item--selectable:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Detail Produk */

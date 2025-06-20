@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produk Table</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; max-width: 800px; margin: auto; }
+    input { width: 100%; padding: 8px; margin-bottom: 1rem; font-size: 16px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    .pagination { text-align: center; margin-top: 1rem; }
+    .pagination button {
+      margin: 2px;
+      padding: 5px 10px;
+      border: none;
+      background: #eee;
+      cursor: pointer;
+    }
+    .pagination button.active {
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+    }
+    .pagination button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .empty-msg { text-align: center; color: #777; padding: 1rem; }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="searchInput" placeholder="Cari produk..." />
+
+  <table>
+    <thead>
+      <tr><th>Nama Produk</th><th>Stok</th></tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <div class="empty-msg" id="emptyMsg" style="display: none;">
+    Data tidak ditemukan.
+  </div>
+
+  <div class="pagination" id="pagination"></div>
+
+  <script>
+    const products = [
+      { name: 'Paracetamol 500mg', stock: 60 },
+      { name: 'Pamol 500mg', stock: 15 },
+      { name: 'Rhinos SR 125mg', stock: 40 },
+      { name: 'Amlodipine 5mg', stock: 21 },
+      { name: 'Copidogrel 75g', stock: 15 },
+      { name: 'Simvastin 10mg', stock: 15 },
+      { name: 'Clindamycin 300mg', stock: 50 },
+      { name: 'Paracetamol 500mg', stock: 60 },
+      { name: 'Omeprazole 20mg', stock: 16 },
+      { name: 'Ciprofloxacin 500mg', stock: 22 },
+      { name: 'Metformin 500mg', stock: 100 },
+      { name: 'Atorvastatin 20mg', stock: 45 },
+      { name: 'Losartan 50mg', stock: 30 },
+      { name: 'Paracetamol 500mg', stock: 60 },
+      { name: 'Ibuprofen 200mg', stock: 80 },
+      { name: 'Ranitidine 150mg', stock: 35 },
+      { name: 'Dexamethasone 0.5mg', stock: 25 },
+    ];
+
+    const rowsPerPage = 5;
+    let currentPage = 1;
+    let filteredData = [...products];
+
+    const tableBody = document.getElementById('tableBody');
+    const searchInput = document.getElementById('searchInput');
+    const pagination = document.getElementById('pagination');
+    const emptyMsg = document.getElementById('emptyMsg');
+
+    function displayTable(data, page) {
+      tableBody.innerHTML = '';
+      let start = (page - 1) * rowsPerPage;
+      let end = start + rowsPerPage;
+      const paginatedItems = data.slice(start, end);
+
+      if (paginatedItems.length === 0) {
+        emptyMsg.style.display = 'block';
+      } else {
+        emptyMsg.style.display = 'none';
+        paginatedItems.forEach(item => {
+          const row = `<tr><td>${item.name}</td><td>${item.stock}</td></tr>`;
+          tableBody.innerHTML += row;
+        });
+      }
+
+      setupPagination(data);
+    }
+
+    function setupPagination(data) {
+      pagination.innerHTML = '';
+      const pageCount = Math.ceil(data.length / rowsPerPage);
+      if (pageCount <= 1) return;
+
+      const maxVisiblePages = 5;
+      let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+      let endPage = startPage + maxVisiblePages - 1;
+
+      if (endPage > pageCount) {
+        endPage = pageCount;
+        startPage = Math.max(1, endPage - maxVisiblePages + 1);
+      }
+
+      const prevBtn = document.createElement('button');
+      prevBtn.textContent = '« Prev';
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.onclick = () => {
+        currentPage--;
+        displayTable(filteredData, currentPage);
+      };
+      pagination.appendChild(prevBtn);
+
+      for (let i = startPage; i <= endPage; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        if (i === currentPage) btn.classList.add('active');
+        btn.onclick = () => {
+          currentPage = i;
+          displayTable(filteredData, currentPage);
+        };
+        pagination.appendChild(btn);
+      }
+
+      const nextBtn = document.createElement('button');
+      nextBtn.textContent = 'Next »';
+      nextBtn.disabled = currentPage === pageCount;
+      nextBtn.onclick = () => {
+        currentPage++;
+        displayTable(filteredData, currentPage);
+      };
+      pagination.appendChild(nextBtn);
+    }
+
+    searchInput.addEventListener('input', function () {
+      const keyword = this.value.toLowerCase();
+      filteredData = products.filter(p =>
+        p.name.toLowerCase().includes(keyword)
+      );
+      currentPage = 1;
+      displayTable(filteredData, currentPage);
+    });
+
+    displayTable(filteredData, currentPage);
+  </script>
+</body>
+</html>
