@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Produk</title>
 
-  <link rel="stylesheet" href="../public/css/general.css">
-  <link rel="stylesheet" href="../public/css/admin/navbar.css">
-  <link rel="stylesheet" href="../public/css/admin/produk.css">
-
-  <script async src="../public/js/admin.js"></script>
-
   <!-- CSS Choices -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 
   <!-- JS Choices -->
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
-  
+
+  <link rel="stylesheet" href="../public/css/general.css">
+  <link rel="stylesheet" href="../public/css/admin/navbar.css">
+  <link rel="stylesheet" href="../public/css/admin/produk.css">
+
+  <script async src="../public/js/admin.js"></script>
+
 </head>
 <body>
   <nav class="navbar">
@@ -66,40 +66,33 @@
           </a>
         </li>
         <li>
-          <a href="riwayat.html" class="sideLinkToggle">
-            <svg width="29" height="23" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg" class="riwayat-icon">
-              <path d="M25.5455 10H1C1 10 1 10.6716 1 11.5V20C1 20.9327 1.94044 22 3 22L26 22C27 22 28 21 28 20V10C28 10 26.9011 10 25.5455 10Z" fill="black" stroke-width="1.4"/>
-              <path d="M25.5455 10H1C1 10 1 10.6716 1 11.5V20C1 20.9327 1.94044 22 3 22L26 22C27 22 28 21 28 20V10C28 10 26.9011 10 25.5455 10Z" fill="black" stroke-width="1.4"/>
-              <path d="M1 10H25.5455C26.9011 10 28 10 28 10V20C28 21 27 22 26 22L3 22C1.94044 22 1 20.9327 1 20M1 10V20M1 10C1 10 1 10.6716 1 11.5V20" stroke="#FBFBFB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="riwayat-icon-stroke"/>
-              <path d="M26 1H3C2 1 1 2 1 3V10H3.45455H25.5455H28V3C28 2 27 1 26 1Z" fill="black" stroke="#FBFBFB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="riwayat-icon-stroke"/>
-              </svg>              
+          <a href="transaksi.html" class="sideLinkToggle">
+            <img src="../public/assets/admin/navbar/laporan-icon.png" alt="">            
             <span>Laporan Transaksi</span>
           </a>
         </li>
       </ul>
-      
-      
     </div>
   </nav>
 
   <main class="container" id="main-content">
-    <section class="tambah-produk-top">
-    <div class="tambah-produk-top-left">
-      <a href="produk.html">
-        <img src="../public/assets/admin/produk/back-arrow-green.png" alt="Logo">
-      </a>
-      <div class="separator"></div>
-      <div class="page-title"><p>Tambah Produk</p></div>
-    </div>
+    <section class="produk-top-content">
+      <div class="produk-top-left">
+        <a href="produk.html">
+          <img src="../public/assets/admin/produk/back-arrow-green.png" alt="Logo">
+        </a>
+        <div class="separator"></div>
+        <div class="page-title"><p>Tambah Produk</p></div>
+      </div>
     </section>
 
     <section class="form-produk-wrapper">
       <div class="left-form">
         <div class="form">
-          <p>Tipe Obat</p>
+          <p>Tipe Produk</p>
           <select id="form-custom-dropdown" class="form-custom-dropdown">
             <option value="obat">Obat</option>
-            <option value="alat">Alat Kesehatan</option>
+            <option value="alat-kesehatan">Alat Kesehatan</option>
           </select>
         </div>
 
@@ -141,20 +134,37 @@
         </div>
 
         <div class="form">
-          <p>Kategori Obat/Alat Kesehatan</p>
-          <input type="text" placeholder="">
+          <p>Kategori Produk</p>
+          <select id="form-custom-dropdown" class="form-custom-dropdown">
+            <option value="kategori">Tablet</option>
+            <option value="kategori">Kapsul</option>
+            <option value="kategori">Sirup</option>
+            <option value="kategori">Salep</option>
+            <option value="kategori">Injeksi</option>
+          </select>
         </div>
 
         <div class="form">
           <p>Satuan</p>
-          <input type="text" placeholder="">
+          <select id="form-custom-dropdown" class="form-custom-dropdown">
+            <option value="satuan">Tablet</option>
+            <option value="satuan">Strip</option>
+            <option value="satuan">Botol</option>
+            <option value="satuan">Box</option>
+            <option value="satuan">Sachet</option>
+            <option value="satuan">Unit</option>
+            <option value="satuan">Pack</option>
+            <option value="satuan">Tube</option>
+          </select>
         </div>
 
         <div class="form">
           <p>Jenis</p>
-          <input type="text" placeholder="">
+          <select id="form-custom-dropdown" class="form-custom-dropdown">
+            <option value="jenis">Bebas</option>
+            <option value="jenis">Butuh Resep</option>
+          </select>
         </div>
-
         <div class="form">
           <p>Petunjuk Penggunaan</p>
           <textarea type="text" placeholder="Cara penggunaan obat atau alat kesehatan"></textarea>
@@ -182,10 +192,14 @@
 </body>
   
   <script>
-    const choices = new Choices('#form-custom-dropdown', {
-      searchEnabled: false,
-      itemSelectText: '',
-      shouldSort: false,
+    document.querySelectorAll('.form-custom-dropdown').forEach((select) => {
+      new Choices(select, {
+        searchEnabled: false,
+        itemSelectText: '',
+        shouldSort: false,
+        removeItemButton: false,
+        renderSelectedChoices: 'always',
+      });
     });
   </script>
 

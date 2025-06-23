@@ -1,0 +1,197 @@
+body, html {
+  overflow: hidden;
+}
+
+.transaksi-container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-height: 1080px;
+}
+
+.transaksi-left {
+  width: 60%;
+  max-height: 740px;
+}
+
+.produk-grid-wrapper {
+  height: 100%;
+  margin-top: 0;
+  overflow-y: scroll;
+  padding: 3px 15px 5px 3px;
+}
+
+.transaksi-right {
+  width: 40%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 5px;
+}
+
+.detail-transaksi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  height: 90%;
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+  padding: 0.9rem;
+}
+
+.detail-top {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+.metode-bayar-beli {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-produk-transaksi {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.list-produk-transaksi .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wrapper-jumlah-harga {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+}
+
+.detail-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.sub-total, .total-bayar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.biaya-admin {
+  font-weight: 200;
+}
+
+.total-bayar {
+  font-weight: 400;
+  font-size: 26px;
+  border-top: 2px solid #747474;
+  border-bottom: 2px solid #747474;
+  padding: 10px 0;
+}
+
+/* Dropdown */
+.choices {
+  width: 130px;
+  height: 45px;
+  color: var(--text);
+  border: 1px solid #F2F2F2; 
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: var(--shadow)
+}
+
+.choices__inner {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(217, 217, 217, 0.07);
+}
+
+.choices-dropdown {
+  min-width: 140px;
+}
+
+.choices[data-type*="select-one"]::after {
+  right: 1rem;
+}
+
+.choices__list--dropdown {
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.059) !important;
+  border-radius: 6px !important;
+  overflow: hidden;
+  background-color: rgb(252, 252, 252) !important;
+  box-shadow: 1px 2px 4px rgb(222, 222, 222);
+  z-index: 99;
+}
+
+.choices__item--selectable {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.1s ease;
+}
+
+.choices__list--dropdown .choices__item--selectable:hover {
+  background-color: #6398849d !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.choices__item--selectable.is-selected {
+  font-weight: 500 !important;
+  color: var(--text) !important;
+}
+
+.choices__item--selectable.is-highlighted {
+  background-color: transparent !important;
+  color: var(--text) !important;
+  font-weight: normal !important;
+  outline: none !important;
+  font-weight: 500 !important;
+}
+
+
+
+
+.button-bayar {
+  width: 100%;
+}
+
+.btn {
+  min-width: 100%; 
+  height: 100px;
+}
+
+
+/* Responsive Grid */
+@media screen and (min-height: 1070px) {
+  .transaksi-left {
+    max-height: 880px;
+  }
+}

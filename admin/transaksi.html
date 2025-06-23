@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produk</title>
+  <title>Transaksi</title>
+
+  <!-- CSS Choices -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+  <!-- JS Choices -->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
 
   <link rel="stylesheet" href="../public/css/general.css">
   <link rel="stylesheet" href="../public/css/admin/navbar.css">
-  <link rel="stylesheet" href="../public/css/admin/dashboard.css">
+  <link rel="stylesheet" href="../public/css/admin/transaksi.css">
 
   <script async src="../public/js/admin.js"></script>
 
@@ -59,14 +66,9 @@
           </a>
         </li>
         <li>
-          <a href="riwayat.html" class="sideLinkToggle">
-            <svg width="29" height="23" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg" class="riwayat-icon">
-              <path d="M25.5455 10H1C1 10 1 10.6716 1 11.5V20C1 20.9327 1.94044 22 3 22L26 22C27 22 28 21 28 20V10C28 10 26.9011 10 25.5455 10Z" fill="black" stroke-width="1.4"/>
-              <path d="M25.5455 10H1C1 10 1 10.6716 1 11.5V20C1 20.9327 1.94044 22 3 22L26 22C27 22 28 21 28 20V10C28 10 26.9011 10 25.5455 10Z" fill="black" stroke-width="1.4"/>
-              <path d="M1 10H25.5455C26.9011 10 28 10 28 10V20C28 21 27 22 26 22L3 22C1.94044 22 1 20.9327 1 20M1 10V20M1 10C1 10 1 10.6716 1 11.5V20" stroke="#FBFBFB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="riwayat-icon-stroke"/>
-              <path d="M26 1H3C2 1 1 2 1 3V10H3.45455H25.5455H28V3C28 2 27 1 26 1Z" fill="black" stroke="#FBFBFB" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="riwayat-icon-stroke"/>
-              </svg>              
-            <span>Riwayat Transaksi</span>
+          <a href="laporan.html" class="sideLinkToggle">
+            <img src="../public/assets/admin/navbar/laporan-icon.png" alt="">            
+            <span>Laporan Transaksi</span>
           </a>
         </li>
       </ul>
@@ -75,7 +77,265 @@
     </div>
   </nav>
 
-  <main class="container" id="main-content"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum in, ut aliquam reprehenderit iusto aperiam autem voluptatum dolorum eaque hic alias quae unde saepe excepturi expedita ab accusamus enim est atque placeat labore corporis et fuga minima? Nemo nostrum voluptas fugiat. At rem facilis iure fugiat sint inventore, tenetur pariatur?</strong></main>
+  <main class="container" id="main-content">
+    <section class="admin-top-content">
+      <div class="page-title">
+        <p>Transaksi</p>
+      </div>
+
+      <div class="search">
+        <img src="../public/assets/pelanggan/landing/search-icon.png" alt="search logo">
+        <input type="text" placeholder="Cari Produk..."></input>
+      </div>
+
+        <div class="custom-dropdown">
+          <div class="selected">Semua Kategori</div>
+          <ul class="dropdown-list">
+            <li data-value="semua">Semua Kategori</li>
+            <li data-value="obat">Obat</li>
+            <li data-value="vitamin">Vitamin</li>
+            <li data-value="perawatan">Perawatan</li>
+            <li data-value="alat-kesehatan">Alat Kesehatan</li>
+          </ul>
+          <input type="hidden" name="kategori" id="kategori">
+        </div>        
+    </section>
+
+    <section class="transaksi-container">
+      <div class="transaksi-left">
+        <div class="produk-grid-wrapper custom-scroll">
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/pamol.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Pamol 500mg</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>    
+          </a>
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="warning-resep">
+              <p>Butuh Resep</p>
+            </div>
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/rhinos.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Rhinos SR 125mg</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="warning-resep">
+              <p>Butuh Resep</p>
+            </div>
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/amplodipine.png" alt="Produk 3">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Amplodipine 5mg</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="warning-resep">
+              <p>Butuh Resep</p>
+            </div>
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/clopidogrel.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Clopidogrel bisulfate 75mg</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/kruk.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Kruk alat bantu jalan</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="warning-resep">
+              <p>Butuh Resep</p>
+            </div>
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/simvastatin.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Simvastatin 10g</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="warning-resep">
+              <p>Butuh Resep</p>
+            </div>
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/clindamycin.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Clindamycin 300mg</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/omeprazole.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Omeprazole 20mg</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>    
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="warning-resep">
+              <p>Butuh Resep</p>
+            </div>
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/ciproflaxacin.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Ciproflaxacin 500mg</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>
+    
+          <a class="produk-grid-item" href="detail_produk.html">
+            <div class="image-container">
+              <img src="../public/assets/pelanggan/produk/termometer.png" alt="Produk 1">
+            </div>
+            <div class="produk-info-top">
+              <p class="produk-nama">Sowell termometer Telinga Sdt-350</p>
+            </div>
+            <div class="produk-info-bottom">
+              <p class="produk-harga">Rp. 20.000</p>
+              <p class="produk-stok">Stok x15</p>
+            </div>        
+          </a>
+    
+        </div>
+      </div>
+
+
+      <div class="transaksi-right">
+        <div class="detail-transaksi">
+          <div class="detail-top">
+            <div class="metode-bayar-beli">
+              <p>Metode Pembelian</p>
+              <div class="dropdown-wrapper">
+                <select class="dropdown-metode">
+                  <option value="langsung">Langsung</option>
+                  <option value="qris">Online</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="list-produk-transaksi">
+              <div class="item">
+                <p class="nama">Pamol 500mg</p>
+                <div class="wrapper-jumlah-harga">
+                  <p class="jumlah">x5</p>
+                  <p class="harga">Rp. 200.000</p>
+                </div>
+              </div>
+              <div class="item">
+                <p class="nama">Rhinos SR 125mg</p>
+                <div class="wrapper-jumlah-harga">
+                  <p class="jumlah">x10</p>
+                  <p class="harga">Rp. 50.000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-bottom">
+            <div class="metode-bayar-beli">
+              <p>Metode Pembayaran</p>
+              <div class="dropdown-wrapper">
+                <select class="dropdown-metode">
+                  <option value="cash">Cash</option>
+                  <option value="qris">Qris</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="sub-total">
+              <p>Sub Total</p>
+              <p>Rp. 770.500</p>
+            </div>
+            <div class="biaya-admin">
+              <p>Biaya Admin (15%)</p>
+            </div>
+            <div class="total-bayar">
+              <p>Total</p>
+              <p>Rp. 770.500</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="button-bayar">
+          <a href="" class="btn btn--green"></a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
 
 </body>
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
+    crossorigin="anonymous">
+  </script>
+  
+  <script>
+    const dropdownMetode = document.querySelectorAll('.dropdown-metode');
+
+    dropdownMetode.forEach((dropdown) => {
+      new Choices(dropdown, {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+    });
+</script>
 </html>

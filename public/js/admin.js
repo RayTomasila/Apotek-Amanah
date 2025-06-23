@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const list = dropdown.querySelector(".dropdown-list");
   const hiddenInput = dropdown.querySelector("input");
 
-  // Sidebar links
   selected.addEventListener("click", () => {
     list.style.display = list.style.display === "block" ? "none" : "block";
   });
