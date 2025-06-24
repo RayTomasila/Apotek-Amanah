@@ -28,7 +28,7 @@ nav {
 }
 
 .left-content img {
-  max-width: 40px;
+  max-width: 35px;
   max-height: auto;
 }
 
@@ -61,23 +61,25 @@ nav {
 
 .detail-left,
 .detail-right {
-  width: 537px;
+  width: 500px;
 }
 
 .detail-middle {
-  width: 606px ;
-  margin: 0 45px;
+  width: 700px ;
+  margin: 0 40px;
 }
+
   /* Left Content */
   .detail-left .image-container {
     width: 100%;
-    height: 436px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: solid 2px #E5E5E5;
     border-radius: 6px;
     padding: 1rem;
+    margin-bottom: 20px;
   }
 
   .detail-left .image-container img {
@@ -93,7 +95,6 @@ nav {
     justify-content: left;
     align-items: center;
     border-radius: 6px;
-    margin-top: 24px;
     padding: 0.9rem;
     cursor: pointer;
     border: solid 2px #E5E5E5;
@@ -182,6 +183,14 @@ nav {
 
 
   /* Middle Content */
+  .detail-middle-top-wrapper {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
   .detail-middle .detail-middle-top {
     width: 100%;
     margin-top: -10px;
@@ -192,7 +201,7 @@ nav {
     font-size: 34px;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 40px !important;
+    /* margin-bottom: 40px !important; */
   }
 
   .detail-middle-top .harga-produk {
@@ -214,7 +223,7 @@ nav {
     border-top: 2px solid var(--text);
     border-bottom: 2px solid var(--text);
     padding: 0.9rem 0;
-    margin: 1rem 0;
+    margin: 0 0 0 0;
   }
 
   .detail-produk-info .info-container {
@@ -234,32 +243,22 @@ nav {
   /* Detail Info Stok, Resep, Bpom */
 
 
-  .detail-middle-bottom {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: left;
-    margin-top: 1rem;
-  }
-
-  .detail-middle-bottom .deskripsi {
+  .deskripsi {
     border-radius: 6px;
     background-color: #FDFDFD;
     box-shadow: var(--shadow);
-    min-height: 203px;
+    min-height: 200px;
     height: auto;
-    margin-bottom: 26px;
     padding: 0.7rem;
   }
 
-  .detail-middle-bottom .deskripsi span {
+  .deskripsi span {
     color: black;
     font-size: 17;
     font-weight: 500;
   }
 
-  .detail-middle-bottom .deskripsi p {
+  .deskripsi p {
     margin-top: 10px !important;
     line-height: 28px;
     color: rgb(21, 21, 21);
@@ -270,9 +269,8 @@ nav {
 
   /* Detail Right */
   .detail-produk .detail-right-content {
-    max-height: 340px;
-    overflow-y: scroll;
-    padding: 0.5rem 1.4rem 0 0.4rem;
+    max-height: auto;
+    /* padding: 0.5rem 1.4rem 0 0.4rem; */
   }
 
   .detail-produk-text {
@@ -286,14 +284,18 @@ nav {
   .detail-right-item {
     height: 70px;
     border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
     background-color: #FDFDFD;
     box-shadow: var(--shadow);
-    padding: 0.5rem;
+    padding: 15px;
     margin-bottom: 16px;
   }
 
   .detail-right-item span {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--text);
   }

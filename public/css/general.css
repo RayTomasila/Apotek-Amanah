@@ -148,63 +148,78 @@ img {
 /* Search Bar */
 
 
-/* Dropdown Kategori */
-  .custom-dropdown {
-    position: relative;
-    width: 200px;
-    background-color: var(--secondary);
-    border-radius: 6px;
-    font-size: 18px;
-    padding: 0.8rem;
-    box-shadow: var(--shadow);
-    cursor: pointer;
+/* Dropdown Kategori choice.js */
+  .choices {
+    width: 180px;
+    height: 50px;
     color: var(--text);
-    text-wrap: nowrap;
-  }
-
-  .custom-dropdown .selected {
+    border: 1px solid #F2F2F2; 
+    border-radius: 6px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='10' height='7' viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 13px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    text-wrap: nowrap;
+    background-color: #ffffff;
+
   }
 
-  .dropdown-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--secondary);
+  .choices__inner {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border: none;
     border-radius: 6px;
-    box-shadow: var(--shadow);
-    margin-top: 5px;
-    display: none;
+    background-color: rgba(217, 217, 217, 0.07);
+  }
+
+  .choices-dropdown {
+    min-width: 140px;
+  }
+
+  .choices[data-type*="select-one"]::after {
+    right: 1rem;
+  }
+
+  .choices__list--dropdown {
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.059) !important;
+    border-radius: 6px !important;
+    overflow: hidden;
+    background-color: rgb(252, 252, 252) !important;
+    box-shadow: 1px 2px 4px rgb(222, 222, 222);
     z-index: 99;
   }
 
-  ul.dropdown-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .choices__item--selectable {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: var(--text);
+    transition: background-color 0.2s ease, color 0.1s ease;
   }
 
-  .dropdown-list li {
-    padding: 0.8rem;
-    cursor: pointer;
+  .choices__list--dropdown .choices__item--selectable:hover {
+    background-color: #6398849d !important;
+    color: white !important;
+    font-weight: 600 !important;
   }
 
-  .dropdown-list li:hover {
-    background-color: var(--primary);
-    color: white;
-    font-weight: 500;
+  .choices__item--selectable.is-selected {
+    font-weight: 500 !important;
+    color: var(--text) !important;
   }
 
-
-
-/* Dropdown Kategori */
+  .choices__item--selectable.is-highlighted {
+    background-color: transparent !important;
+    color: var(--text) !important;
+    font-weight: normal !important;
+    outline: none !important;
+    font-weight: 500 !important;
+  }
+/* Dropdown Kategori choice.js */
 
 
 /* Button <a> */
