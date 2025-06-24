@@ -1,6 +1,6 @@
 .landing .produk {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
 
@@ -8,7 +8,7 @@
   text-decoration: none;
   color: var(--text);
   display: flex;
-  min-height: 355px;
+  height: 370px;
   background-color: white;
   border-radius: 8px;
   padding: 1.7rem 0.8rem 0.8rem;
