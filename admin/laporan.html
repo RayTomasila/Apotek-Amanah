@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../public/css/admin/navbar.css">
   <link rel="stylesheet" href="../public/css/admin/dashboard.css">
 
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <script async src="../public/js/admin.js"></script>
 
 </head>
@@ -71,7 +72,51 @@
     </div>
   </nav>
 
-  <main class="container" id="main-content"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum in, ut aliquam reprehenderit iusto aperiam autem voluptatum dolorum eaque hic alias quae unde saepe excepturi expedita ab accusamus enim est atque placeat labore corporis et fuga minima? Nemo nostrum voluptas fugiat. At rem facilis iure fugiat sint inventore, tenetur pariatur?</strong></main>
+  <main class="container" id="main-content">
+    <div class="charts-container">
+      <div id="chart"></div>
+      <script>
+        function createLineChartOptions(titleText, categories, seriesData) {
+          return {
+            series: [{
+              name: "Series 1",
+              data: seriesData
+            }],
+            chart: {
+              height: 350,
+              type: 'line',
+              zoom: { enabled: false }
+            },
+            dataLabels: { enabled: false },
+            stroke: { curve: 'straight' },
+            title: {
+              text: titleText,
+              align: 'left'
+            },
+            grid: {
+              row: {
+                colors: ['transparent', 'transparent'],
+                opacity: 0.5
+              },
+            },
+            xaxis: {
+              categories: categories,
+            }
+          };
+        }
+
+        var options = createLineChartOptions(
+          'Product Trends by Month',
+          ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+          [10, 41, 35, 51, 49, 62, 69, 91, 148]
+        );
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+      </script>
+    </div>
+  </main>
 
 </body>
 </html>

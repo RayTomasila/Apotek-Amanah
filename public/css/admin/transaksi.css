@@ -93,7 +93,9 @@ body, html {
 }
 
 .biaya-admin {
+  margin-top: -10px;
   font-weight: 200;
+  color: #616161;
 }
 
 .total-bayar {
@@ -181,6 +183,10 @@ body, html {
 
 .button-bayar {
   width: 100%;
+}
+
+.button-bayar a {
+  font-size: 26px;
 }
 
 .btn {
