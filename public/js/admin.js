@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainContent = document.getElementById('main-content');
   const sideLinks = document.querySelectorAll('.sideLinkToggle');
 
-  // Toggle sidebar
   toggleArrow.addEventListener('click', (e) => {
     e.preventDefault();
     sidebar.classList.toggle('sideBarClosed');

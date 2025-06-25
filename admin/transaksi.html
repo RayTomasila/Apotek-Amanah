@@ -11,7 +11,6 @@
   <!-- JS Choices -->
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
-
   <link rel="stylesheet" href="../public/css/general.css">
   <link rel="stylesheet" href="../public/css/admin/navbar.css">
   <link rel="stylesheet" href="../public/css/admin/transaksi.css">
@@ -88,17 +87,14 @@
         <input type="text" placeholder="Cari Produk..."></input>
       </div>
 
-        <div class="custom-dropdown">
-          <div class="selected">Semua Kategori</div>
-          <ul class="dropdown-list">
-            <li data-value="semua">Semua Kategori</li>
-            <li data-value="obat">Obat</li>
-            <li data-value="vitamin">Vitamin</li>
-            <li data-value="perawatan">Perawatan</li>
-            <li data-value="alat-kesehatan">Alat Kesehatan</li>
-          </ul>
-          <input type="hidden" name="kategori" id="kategori">
-        </div>        
+      <div class="dropdown-wrapper">
+        <select class="dropdown-kategori">
+          <option value="semua-kategori" selected>Semua Kategori</option>
+          <option value="obat">Obat</option>
+          <option value="alat-kesehatan">Alat Kesehatan</option>
+          <option value="vitamin">Vitamin</option>
+        </select>
+      </div>     
     </section>
 
     <section class="transaksi-container">
@@ -261,7 +257,7 @@
           <div class="detail-top">
             <div class="metode-bayar-beli">
               <p>Metode Pembelian</p>
-              <div class="dropdown-wrapper">
+              <div class="dropdown-wrapper metode">
                 <select class="dropdown-metode">
                   <option value="langsung">Langsung</option>
                   <option value="qris">Online</option>
@@ -290,7 +286,7 @@
           <div class="detail-bottom">
             <div class="metode-bayar-beli">
               <p>Metode Pembayaran</p>
-              <div class="dropdown-wrapper">
+              <div class="dropdown-wrapper metode">
                 <select class="dropdown-metode">
                   <option value="cash">Cash</option>
                   <option value="qris">Qris</option>
@@ -330,12 +326,23 @@
   
   <script>
     const dropdownMetode = document.querySelectorAll('.dropdown-metode');
-
     dropdownMetode.forEach((dropdown) => {
       new Choices(dropdown, {
         searchEnabled: false,
         itemSelectText: '',
       });
     });
-</script>
+
+  </script>
+
+  <script>
+    const dropdownKategori = document.querySelectorAll('.dropdown-kategori');
+    dropdownKategori.forEach((option) => {
+      new Choices(option, {
+        searchEnabled: false,
+        itemSelectText: '',
+        shouldSort: false
+      });
+    });
+  </script>
 </html>

@@ -12,6 +12,7 @@
   padding: 0 15px 0 0;
   color: white;
   overflow: hidden;
+  box-shadow: var(--shadow);
 
   position: sticky;
   left: 0;
@@ -19,12 +20,10 @@
   right: 0;
   z-index: 999;
 
-  box-shadow: var(--shadow);
-
 }
 
 .topNav li {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
 }
 
@@ -67,7 +66,7 @@
 }
 
 .sidebar .sidebar-logo span {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 600;
   color: var(--primary);
   text-wrap: nowrap;
@@ -99,7 +98,7 @@
   height: 70px;
   margin: 0 0.8rem;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   color: black;
 }
 
