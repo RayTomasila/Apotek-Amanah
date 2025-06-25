@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Produk</title>
 
+  <!-- CSS Choices -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+  <!-- JS Choices -->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
   <link rel="stylesheet" href="../public/css/general.css">
   <link rel="stylesheet" href="../public/css/admin/navbar.css">
   <link rel="stylesheet" href="../public/css/admin/dashboard.css">
   <link rel="stylesheet" href="../public/css/admin/produk.css">
+  <link rel="stylesheet" href="../public/css/admin/custom-dropdown.css">
 
   <script async src="../public/js/admin.js"></script>
 
@@ -83,16 +90,13 @@
       </div>
 
       <div class="admin-top-content-right">
-        <div class="custom-dropdown">
-          <div class="selected">Semua Kategori</div>
-          <ul class="dropdown-list">
-            <li data-value="semua">Semua Kategori</li>
-            <li data-value="obat">Obat</li>
-            <li data-value="vitamin">Vitamin</li>
-            <li data-value="perawatan">Perawatan</li>
-            <li data-value="alat-kesehatan">Alat Kesehatan</li>
-          </ul>
-          <input type="hidden" name="kategori" id="kategori">
+        <div class="dropdown-wrapper">
+          <select class="dropdown-kategori">
+            <option value="semua-kategori" selected>Semua Kategori</option>
+            <option value="obat">Obat</option>
+            <option value="alat-kesehatan">Alat Kesehatan</option>
+            <option value="vitamin">Vitamin</option>
+          </select>
         </div>
         
         <div class="btn btn--green">
@@ -258,11 +262,16 @@
   </main>
 
 </body>
-
-  <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
-    crossorigin="anonymous">
-  </script>
   
+  <script>
+    const dropdownKategori = document.querySelectorAll('.dropdown-kategori');
+
+    dropdownKategori.forEach((option) => {
+      new Choices(option, {
+        searchEnabled: false,
+        itemSelectText: '',
+        shouldSort: false
+      });
+    });
+  </script>
 </html>

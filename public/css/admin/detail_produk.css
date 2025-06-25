@@ -1,0 +1,47 @@
+  /* Dropdown Kategori choice.js */
+  .choices {
+    width: 100%;
+    height: 45px;
+    color: var(--text);
+    border: 2px solid #F2F2F2; 
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: none;
+    text-wrap: nowrap;
+    background-color: #ffffff;
+
+  }
+
+  .choices__inner {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(217, 217, 217, 0.07);
+  }
+
+  .choices-dropdown {
+    min-width: 140px;
+  }
+
+  .choices[data-type*="select-one"]::after {
+    right: 1rem;
+  }
+
+  .choices__list--dropdown {
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.059) !important;
+    border-radius: 6px !important;
+    overflow: hidden;
+    background-color: rgb(252, 252, 252) !important;
+    box-shadow: 1px 2px 4px rgb(222, 222, 222);
+    z-index: 99;
+  }
+
+  .choices__item--selectable {
+    font-size: 16px !important;
+  }
+/* Dropdown Kategori choice.js */
