@@ -27,9 +27,22 @@ nav {
   color: white;
 }
 
+.left-content a {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 6px;
+
+  transition: background-color 0.5s ease;
+}
+
 .left-content img {
-  max-width: 35px;
-  max-height: auto;
+  width: 100%;
+  height: 100%;
+  justify-self: center;
 }
 
 .separator {
@@ -37,6 +50,10 @@ nav {
   width: 2px;
   background-color: white;
   margin: 0 13px;
+}
+
+.left-content a:hover {
+  background-color: rgba(0, 0, 0, 0.151);
 }
 /* Nav Content */
 
@@ -67,9 +84,13 @@ nav {
 .detail-middle {
   width: 700px ;
   margin: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-  /* Left Content */
+
+/* Left Content */
   .detail-left .image-container {
     width: 100%;
     height: 450px;
@@ -87,110 +108,17 @@ nav {
     max-height: 100%;
     object-fit: contain;
   }
+/* Left Content */
 
-  .detail-left .redirect {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    border-radius: 6px;
-    padding: 0.9rem;
-    cursor: pointer;
-    border: solid 2px #E5E5E5;
-    color: var(--text);
+
+
+/* Middle Content */
+  .detail-produk-wrapper {
+    max-height: 600px;
+    overflow-y: scroll;
+    padding: 2px 15px 2px 2px;
   }
 
-  .redirect .redirect-top {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .redirect-middle {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .redirect-middle a {
-    display: flex;
-    flex-direction: row;
-    align-items: top;
-    text-decoration: none;
-    color: var(--text);
-  }
-
-  .redirect-middle .redirect-img-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 75px;
-    margin-right: 0.8rem;
-    border-radius: 6px;
-    border: solid 2px #E5E5E5;
-    margin-bottom: 0.6rem;
-  }
-
-  .redirect-middle .redirect-img-container img {
-    max-width: 70%;
-    max-height: 70%;
-    object-fit: contain;
-  }
-
-  .redirect-middle button {
-    height: 42px;
-    width: 180px;
-    border-radius: 6px;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-
-  .btn-tokopedia {
-    background-color: #579B4E;
-  }
-
-  .btn-shopee {
-    background-color: #EE4E2C;
-  }
-
-  .redirect-bottom {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5rem;
-  }
-
-  .redirect-bottom img {
-    max-width: 32px;
-    max-height: 32px;
-    margin-right: 0.9rem;
-  }
-
-  .redirect-bottom p {
-   font-size: 15px;
-   font-weight: 400;
-  }
-  /* Left Content */
-
-
-
-  /* Middle Content */
-  .detail-middle-top-wrapper {
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
   .detail-middle .detail-middle-top {
     width: 100%;
     margin-top: -10px;
@@ -201,7 +129,6 @@ nav {
     font-size: 34px;
     font-weight: 600;
     color: var(--text);
-    /* margin-bottom: 40px !important; */
   }
 
   .detail-middle-top .harga-produk {
@@ -218,12 +145,12 @@ nav {
   }
 
 
-  /* Detail Info Stok, Resep, Bpom */
+/* Detail Info Stok, Resep, Bpom */
   .detail-produk-info {
     border-top: 2px solid var(--text);
     border-bottom: 2px solid var(--text);
     padding: 0.9rem 0;
-    margin: 0 0 0 0;
+    margin: 0;
   }
 
   .detail-produk-info .info-container {
@@ -240,48 +167,11 @@ nav {
     height: auto;
     margin-right: 0.8rem;
   }
-  /* Detail Info Stok, Resep, Bpom */
+/* Detail Info Stok, Resep, Bpom */
 
 
-  .deskripsi {
-    border-radius: 6px;
-    background-color: #FDFDFD;
-    box-shadow: var(--shadow);
-    min-height: 200px;
-    height: auto;
-    padding: 0.7rem;
-  }
-
-  .deskripsi span {
-    color: black;
-    font-size: 17;
-    font-weight: 500;
-  }
-
-  .deskripsi p {
-    margin-top: 10px !important;
-    line-height: 28px;
-    color: rgb(21, 21, 21);
-    font-size: 16px;
-    letter-spacing: 0.1px;
-  }
-
-
-  /* Detail Right */
-  .detail-produk .detail-right-content {
-    max-height: auto;
-  }
-
-  .detail-produk-text {
-    margin-top: -10px;
-    font-size: 34px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 20px;
-  }
-
-  .detail-right-item {
-    height: 70px;
+  .detail-item {
+    height: 80px;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -290,15 +180,169 @@ nav {
     background-color: #FDFDFD;
     box-shadow: var(--shadow);
     padding: 15px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
-  .detail-right-item span {
+  .detail-item span {
     font-size: 16px;
     font-weight: 600;
     color: var(--text);
   }
-  
+/* Middle Content */
+
+
+
+  /* Detail Right */
+  .detail-right {
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    border-radius: 6px;
+    padding: 0.9rem;
+    cursor: pointer;
+    border: solid 2px #E5E5E5;
+    color: var(--text);
+  }
+
+  .right-top {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .right-middle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .qty-container {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: fit-content;
+  }
+
+  .qty-container input[type=number] {
+    width: 50px;
+    text-align: center;
+    border: none;
+    -moz-appearance: textfield;
+  }
+
+  .qty-container input::-webkit-outer-spin-button,
+  .qty-container input::-webkit-inner-spin-button {
+    display: none;
+    margin: 0;
+  }
+
+  .qty-container button {
+    all: unset;
+    background: #eee;
+    padding: 0 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .qty-container button:active {
+    background: #ddd;
+  }
+
+  .sub-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .sub-total .harga {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .buttons {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .buttons a {
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    width: 50%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+
+    transition: color 0.6s, background-color 0.6s, border 1s ease;
+  }
+
+  .buttons a span {
+    height: 100%;
+    width: 0;
+    border-radius: 6px;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    position: absolute;
+    transition: width 0.6s ease;
+  }
+
+  .buttons a.btn--keranjang span {
+    right: 0;
+    left: auto;
+    transform-origin: right;
+  }
+
+  .btn--beli {
+    border: 1.7px solid var(--primary);
+  }
+
+  .btn--beli span {
+    background-color: rgba(77, 141, 117, 0.86);
+    z-index: 1;
+  }
+
+  .btn--keranjang {
+    background-color: var(--primary);
+    color: white;
+    z-index: 2;
+  }
+
+  .btn--keranjang span {
+    background-color: #fff !important;
+  }
+
+  a.btn--beli:hover span,
+  a.btn--keranjang:hover span {
+    width: 100%;
+  }
+
+  a.btn--beli:hover {
+    color: white;
+  }
+
+  a.btn--keranjang:hover {
+    color: var(--text);
+    border: 1.7px solid var(--primary);
+  }
+
   /* Detail Right */
 
 
