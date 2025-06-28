@@ -59,113 +59,98 @@
       <div class="image-container">
         <img src="../public/assets/pelanggan/produk/pamol.png" alt="Produk Image">
       </div>
-
-      <div class="redirect">
-        <div class="redirect-top">
-          <p>Pilih salah satu link berikut untuk membeli produk ini:</p>
-        </div>
-        <div class="redirect-middle">
-          <a href="https://www.tokopedia.com/" target="_blank">
-            <div class="redirect-img-container">
-              <img src="../public/assets/pelanggan/detail_produk/tokopedia.png" alt="Tokopedia Logo">
-            </div>
-            <button class="btn-tokopedia">Beli di Tokopedia</button>
-          </a>
-          <a href="https://shopee.co.id/" target="_blank">
-            <div class="redirect-img-container">
-              <img src="../public/assets/pelanggan/detail_produk/shopee.png" alt="Shopee Logo">
-            </div>
-            <button class="btn-shopee">Beli di Shopee</button>
-          </a>
-        </div>
-
-        <div class="redirect-bottom">
-          <img src="../public/assets/pelanggan/detail_produk/checklist.png" alt="check">
-          <p><i>Pembelian dilakukan melalui marketplace terpercaya untuk keamanan dan kenyamanan Anda.</i></p>
-        </div>
-      </div>
     </div>
 
     <div class="detail-middle">
-      <div class="detail-middle-top-wrapper">
-        <div class="detail-middle-top">
-          <p class="nama-produk">Paracetamol 500mg</p>
-          <p class="harga-produk">Rp. 20.000</p>
-        </div>
+      <div class="detail-middle-top">
+        <p class="nama-produk">Paracetamol 500mg</p>
+        <p class="harga-produk">Rp. 20.000</p>
+      </div>
 
-        <div class="detail-produk-info">
-          <div class="info-container">
-            <img src="../public/assets/pelanggan/detail_produk/logo-stok.png" alt="">
-            <p class="info-label">15 Stok</p>
-          </div>
-          <div class="info-container">
-            <img src="../public/assets/pelanggan/detail_produk/logo-resep.png" alt="">
-            <p class="info-label">Tanpa Resep</p>
-          </div>
-          <div class="info-container">
-            <img src="../public/assets/pelanggan/detail_produk/logo-bpom.png" alt="">
-            <p class="info-label">BPOM</p>
-          </div>
+      <div class="detail-produk-info">
+        <div class="info-container">
+          <img src="../public/assets/pelanggan/detail_produk/logo-stok.png" alt="">
+          <p class="info-label">15 Stok</p>
         </div>
-
-        <div class="deskripsi">
-          <span>Deskripsi</span>
-          <p>Indikasi/Penggunaan : 
-            <br> 
-            Meredakan sakit kepala, sakit gigi, nyeri otot dan menurunkan demam. <br> 
-            JANGAN DIGUNAKAN OLEH
-            <br>
-            Penderita gangguan fungsi hati berat dan hipersensitif.</p>
+        <div class="info-container">
+          <img src="../public/assets/pelanggan/detail_produk/logo-resep.png" alt="">
+          <p class="info-label">Tanpa Resep</p>
+        </div>
+        <div class="info-container">
+          <img src="../public/assets/pelanggan/detail_produk/logo-bpom.png" alt="">
+          <p class="info-label">BPOM</p>
         </div>
       </div>
 
-      <div class="deskripsi">
-        <span>Petunjuk Penggunaan</span>
-        <p>Dewasa : 
-          <br>
-          1 - 2 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 8 kaplet per hari.
-          <br>
-          Anak (6 - 12 tahun) :
-          <br> 
-          1/2 - 1 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 4 kaplet per hari.
-          </p>        
-      </div>
-    </div>
-
-    <div class="detail-right">
-      <div class="detail-produk-text">
-        <p>Detail Produk</p>
-      </div>
-      <div class="detail-right-content">
-        <div class="detail-right-item">
+      <div class="detail-produk-wrapper custom-scroll">
+        <div class="detail-item">
+          <span>Deskripsi :</span>
+          <p>Meredakan sakit kepala, sakit gigi, nyeri otot dan menurunkan demam.</p>
+        </div>
+        <div class="detail-item">
+          <span>Petunjuk Penggunaan :</span>
+          <p>1 - 2 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 8 kaplet per hari.</p>
+        </div>
+        <div class="detail-item">
           <span>Komposisi :</span>
           <p>paracetamol - 500mg</p>
         </div>
-        <div class="detail-right-item">
+        <div class="detail-item">
           <span>Jenis Obat :</span>
           <p>Obat Bebas</p>
         </div>
-        <div class="detail-right-item">
+        <div class="detail-item">
           <span>Kategori Obat :</span>
           <p>Tablet</p>
         </div>
-        <div class="detail-right-item">
+        <div class="detail-item">
           <span>Satuan :</span>
           <p>Strip</p>
         </div>
-        <div class="detail-right-item">
+        <div class="detail-item">
           <span>Tanggal Kadaluarsa :</span>
           <p>Oktober 2026</p>
         </div>
-        <div class="detail-right-item">
+        <div class="detail-item">
           <span>No Registrasi BPOM :</span>
           <p>SD123456789</p>
         </div>
-        <div class="detail-right-item">
+        <div class="detail-item">
           <span>Diproduksi oleh :</span>
           <p>PT Kimia Farma Tbk - Indonesia</p>
         </div>
       </div>
+    </div>
+
+    <div class="detail-right">
+      <div class="right-top">
+        <p>Atur jumlah produk yang ingin dibeli</p>
+      </div>
+
+      <div class="right-middle">
+        <div class="qty-container">
+          <button onclick="decrement()">-</button>
+          <input type="number" id="qty" value="1" min="0" readonly>
+          <button onclick="increment()">+</button>
+        </div>
+
+        <div class="sub-total">
+          <p>Subtotal</p>
+          <p class="harga" id="harga">Rp 20.000</p>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a href="#" class="btn--keranjang" onclick="tambahKeKeranjang()">
+          Keranjang
+          <span></span>
+        </a>
+        <a href="checkout.html" class="btn--beli">
+          Beli Langsung
+          <span></span>
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -177,6 +162,8 @@
   </script>
 
   <script>
+    const hargaProduk= 20000;
+
     const dropdownKategori = document.querySelectorAll('.dropdown-kategori');
 
     dropdownKategori.forEach((option) => {
@@ -186,5 +173,28 @@
         shouldSort: false
       });
     });
+
+    function increment() {
+      const input = document.getElementById("qty");
+      input.value = parseInt(input.value) + 1;
+      subTotal();
+    }
+
+    function decrement() {
+      const input = document.getElementById("qty");
+      if (parseInt(input.value) > 0) {
+        input.value = parseInt(input.value) - 1;
+        subTotal();
+      }
+    }
+
+    function subTotal() {
+      const input = document.getElementById("qty");
+      const subtotal = document.getElementById("harga");
+      const total = parseInt(input.value) * hargaProduk;
+
+      subtotal.innerHTML = "Rp " + total.toLocaleString("id-ID");
+    }
+
   </script>
 </html>
