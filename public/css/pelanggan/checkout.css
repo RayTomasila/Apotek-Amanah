@@ -1,0 +1,35 @@
+.checkout-container {
+  max-width: 100%;
+  height: 1000px;
+  display: flex;
+  margin: 5%;
+}
+
+.checkout-top-wrapper {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+
+}
+
+.detail-produk-container {
+  height: 100%;
+  width: 65%;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: var(--shadow);
+}
+
+.zona-kirim-container {
+  flex: 1;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+.checout-bottom-wrapper {
+  
+}
