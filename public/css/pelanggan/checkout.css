@@ -25,11 +25,11 @@
 .zona-kirim-container {
   flex: 1;
   height: 100%;
-  border-radius: 6px;
   background-color: rgb(255, 255, 255);
+  border-radius: 6px;
   box-shadow: var(--shadow);
 }
 
 .checout-bottom-wrapper {
-
+  
 }
