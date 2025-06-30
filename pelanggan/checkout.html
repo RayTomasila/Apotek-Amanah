@@ -11,6 +11,16 @@
   <!-- JS Choices -->
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
+  <!-- Leaflet CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </link> 
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Bootstrap -->
   <link 
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
@@ -22,6 +32,7 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
     crossorigin="anonymous">
   </script>
+  <!-- Bootstrap -->
 
   <link rel="stylesheet" href="../public/css/general.css">
   <link rel="stylesheet" href="../public/css/pelanggan/landing.css">
@@ -39,20 +50,92 @@
   </nav>
 
   <main class="checkout-container">
-    <div class="checkout-top-wrapper">
-      <div class="detail-produk-container">
-        <img src="../public/assets/admin/produk/pamol.png" class="">
-        <p>Pamol 500mg</p>
+    <div class="checkout-wrapper">
+
+      <div class="left-container">
+        <p class="container-title">Produk yang akan dibeli</p>
+        <div class="top-wrapper">
+          <div class="checkout-top-left">
+            <div class="img-container">
+              <img src="../public/assets/pelanggan/produk/pamol.png" alt="">
+            </div>
+            <p>Pamol - 500mg</p>
+          </div>
+
+          <div class="checkout-top-right">
+            <div class="sub-total">
+              <p class="harga" id="harga">Rp 20.000</p>
+            </div>
+            
+            <div class="qty-container">
+              <button onclick="decrement()"><span>-</span></button>
+              <input type="number" id="qty" value="1" min="0" readonly>
+              <button onclick="increment()"><span>+ </span></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bottom-wrapper">
+          <p class="container-title">ISI DATA LENGKAP PENGIRIMAN</p>
+          <div class="form-wrapper">
+
+            <div class="form-left">
+              <div class="form">
+                <p>Nama lengkap</p>
+                <input type="text" placeholder="Nama Lengkap">
+              </div>
+              
+              <div class="form">
+                <p>Alamat Rumah</p>
+                <input type="text" placeholder="Jl.Cendrawasi No.02">
+              </div>
+              
+              <div class="form">
+                <p>Kelurahan & Kecamatan</p>
+                <input type="text" placeholder="Kel.Sukamaju, Kec.Sukamaju">
+              </div>
+
+              <div class="form">
+                <p>Ciri - Ciri Rumah</p>
+                <textarea rows="2" placeholder="Contoh: Pagar hitam tinggi"></textarea>
+              </div>
+            </div>
+
+
+            <div class="form-right">
+              <div class="form">
+                <p>Nomor HP aktif</p>
+                <input type="text" placeholder="contoh: 08123456789">
+              </div>
+
+              <div class="form">
+                <p>RT/RW</p>
+                <input type="text" placeholder="RT 01/RW 02">
+              </div>
+
+              <div class="form">
+                <p>Kode Pos</p>
+                <input type="text" placeholder="41252">
+              </div>
+
+              <div class="form">
+                <p>Catatan Tambahan (Opsional)</p>
+                <textarea rows="2" placeholder="Contoh: Tolong kirim sebelum jam 5 sore."></textarea>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
       </div>
-      <div class="zona-kirim-container">
 
-      </div>      
-    </div>
-
-
-    <div class="checout-bottom-wrapper">
-      
-    </div>
+      <div class="right-container">
+        <div class="zona-kirim-container">
+          <p class="container-title">Pastikan alamat kamu terjangkau Zona Kirim Apotek Amanah</p>  
+          <div id="map" style="height: 360px; border-radius: 6px; margin-top: 10px;"></div>
+        </div>
+      </div>
 
   </main>
 
@@ -62,4 +145,62 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
     crossorigin="anonymous">
   </script>
+
+  <script>
+    // Template Choice.js dropdown kategori
+      const dropdownKategori = document.querySelectorAll('.form-custom-dropdown');
+      dropdownKategori.forEach((option) => {
+        new Choices(option, {
+          searchEnabled: true,
+          itemSelectText: '',
+          shouldSort: false
+        });
+      });
+
+
+    // Quantity Increment dan Decrement
+      const hargaProduk = 20000;
+      function increment() {
+        const input = document.getElementById("qty");
+        input.value = parseInt(input.value) + 1;
+        subTotal();
+      }
+
+      function decrement() {
+        const input = document.getElementById("qty");
+        if (parseInt(input.value) > 0) {
+          input.value = parseInt(input.value) - 1;
+          subTotal();
+        }
+      }
+
+      function subTotal() {
+        const input = document.getElementById("qty");
+        const subtotal = document.getElementById("harga");
+        const total = parseInt(input.value) * hargaProduk;
+
+        subtotal.innerHTML = "Rp " + total.toLocaleString("id-ID");
+      }
+
+
+    // Template Leaflet Map
+      const lat = -7.5305;
+      const lng = 110.5950;
+      const map = L.map('map').setView([lat, lng], 12);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      }).addTo(map);
+
+      L.marker([lat, lng]).addTo(map)
+        .bindPopup('Apotek Amanah')
+        .openPopup();
+
+      L.circle([lat, lng], {
+        color: 'blue',
+        fillColor: '#add8e6',
+        fillOpacity: 0.25,
+        radius: 5000
+      }).addTo(map);
+  </script>
+
 </html>
