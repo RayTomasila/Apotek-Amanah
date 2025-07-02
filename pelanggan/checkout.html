@@ -53,7 +53,7 @@
     <div class="checkout-wrapper">
 
       <div class="left-container">
-        <p class="container-title">Produk yang akan dibeli</p>
+        <p class="container-title">CHECKOUT</p>
         <div class="top-wrapper">
           <div class="checkout-top-left">
             <div class="img-container">
@@ -105,7 +105,7 @@
             <div class="form-right">
               <div class="form">
                 <p>Nomor HP aktif</p>
-                <input type="text" placeholder="contoh: 08123456789">
+                <input type="text" placeholder="08123456789">
               </div>
 
               <div class="form">
@@ -133,8 +133,21 @@
       <div class="right-container">
         <div class="zona-kirim-container">
           <p class="container-title">Pastikan alamat kamu terjangkau Zona Kirim Apotek Amanah</p>  
-          <div id="map" style="height: 360px; border-radius: 6px; margin-top: 10px;"></div>
+          <div id="map"></div>
         </div>
+
+        <div class="metode-container">
+          <p class="container-title">PILIH PENGIRIMAN</p>
+          <div class="form-custom-dropdown">
+            <select name="kategori" id="kategori">
+              <option value="1">Gojek - GoSend</option>
+              <option value="2">Grab - GrabExpress</option>
+            </select>
+          </div>
+
+          <a href="pembayaran.html" class="btn btn--green">Checkout Sekarang</a>
+        </div>
+
       </div>
 
   </main>
@@ -146,12 +159,16 @@
     crossorigin="anonymous">
   </script>
 
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+
   <script>
     // Template Choice.js dropdown kategori
-      const dropdownKategori = document.querySelectorAll('.form-custom-dropdown');
-      dropdownKategori.forEach((option) => {
-        new Choices(option, {
-          searchEnabled: true,
+      const dropdownKategori = document.querySelectorAll('.form-custom-dropdown select');
+      dropdownKategori.forEach((select) => {
+        new Choices(select, {
+          searchEnabled: false,
           itemSelectText: '',
           shouldSort: false
         });
@@ -186,7 +203,7 @@
     // Template Leaflet Map
       const lat = -7.5305;
       const lng = 110.5950;
-      const map = L.map('map').setView([lat, lng], 12);
+      const map = L.map('map').setView([lat, lng], 9);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       }).addTo(map);
@@ -199,8 +216,11 @@
         color: 'blue',
         fillColor: '#add8e6',
         fillOpacity: 0.25,
-        radius: 5000
+        radius: 40000
       }).addTo(map);
+
+
+
   </script>
 
 </html>

@@ -2,6 +2,7 @@
 
 :root {
   --primary: #639884;
+  --primary-hover: rgba(122, 170, 152, 0.86);
   --secondary: #FBFBFB;
   --text: #383838;
   --bg: #ffffff;
