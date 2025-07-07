@@ -54,15 +54,16 @@
 
       <div class="left-container">
         <p class="container-title">CHECKOUT</p>
+
         <div class="top-wrapper">
-          <div class="checkout-top-left">
+          <div class="left">
             <div class="img-container">
               <img src="../public/assets/pelanggan/produk/pamol.png" alt="">
             </div>
             <p>Pamol - 500mg</p>
           </div>
 
-          <div class="checkout-top-right">
+          <div class="right">
             <div class="sub-total">
               <p class="harga" id="harga">Rp 20.000</p>
             </div>
@@ -78,7 +79,6 @@
         <div class="bottom-wrapper">
           <p class="container-title">ISI DATA LENGKAP PENGIRIMAN</p>
           <div class="form-wrapper">
-
             <div class="form-left">
               <div class="form">
                 <p>Nama lengkap</p>
@@ -101,7 +101,6 @@
               </div>
             </div>
 
-
             <div class="form-right">
               <div class="form">
                 <p>Nomor HP aktif</p>
@@ -123,31 +122,90 @@
                 <textarea rows="2" placeholder="Contoh: Tolong kirim sebelum jam 5 sore."></textarea>
               </div>
             </div>
-
           </div>
 
+          <div class="zona-kirim-container">
+            <p class="container-title">TENTUKAN PIN POIN LOKASI</p>  
+            <span>Pastikan alamat kamu terjangkau zona pengiriman</span>
+            <div id="map"></div>
+          </div>
 
         </div>
       </div>
 
       <div class="right-container">
-        <div class="zona-kirim-container">
-          <p class="container-title">Pastikan alamat kamu terjangkau Zona Kirim Apotek Amanah</p>  
-          <div id="map"></div>
+        <div class="metode-pambayaran-container">
+          <p class="container-title">PILIH METODE PEMBAYARAN</p>
+
+          <div class="metode-pembayaran-wrapper">            
+            <div class="metode-pembayaran">
+              <div class="img-label-wrapper">
+                <div class="metode-img-container">
+                  <img src="../public/assets/pelanggan/checkout/BNI.png">
+                </div>
+                <label for="BNI">BNI Virtual Account</label>
+              </div>
+              <input type="radio" id="bni" name="drone" value="louie" />
+            </div>
+
+            <div class="metode-pembayaran">
+              <div class="img-label-wrapper">
+                <div class="metode-img-container">
+                  <img src="../public/assets/pelanggan/checkout/BRI.png">
+                </div>
+                <label for="BRI">BRI Virtual Account</label>
+              </div>
+
+              <input type="radio" id="bri" name="drone" value="louie" />
+            </div>
+
+            <div class="metode-pembayaran">
+              <div class="img-label-wrapper">
+                <div class="metode-img-container">
+                  <img src="../public/assets/pelanggan/checkout/BCA.png">
+                </div>
+                <label for="BCA">BCA Virtual Account</label>
+              </div>
+
+              <input type="radio" id="bca" name="drone" value="louie" />
+            </div>
+
+            <div class="metode-pembayaran">
+              <div class="img-label-wrapper">
+                <div class="metode-img-container">
+                  <img src="../public/assets/pelanggan/checkout/COD.png">
+                </div>
+                <label for="COD">COD (Bayar di Tempat)</label>
+              </div>
+              
+              <input type="radio" id="cod" name="drone" value="louie" />
+            </div>
+          </div>
+
         </div>
 
-        <div class="metode-container">
-          <p class="container-title">PILIH PENGIRIMAN</p>
+        <div class="metode-pengiriman-container">
+          <p class="container-title">PILIH METODE PENGIRIMAN</p>
           <div class="form-custom-dropdown">
             <select name="kategori" id="kategori">
               <option value="1">Gojek - GoSend</option>
               <option value="2">Grab - GrabExpress</option>
             </select>
           </div>
-
-          <a href="pembayaran.html" class="btn btn--green">Checkout Sekarang</a>
         </div>
+        
+        <div class="ringkasan-transaksi-container">
+          <div class="ongkos-kirim">
+            <p>Ongkos Kirim</p>
+            <span>Rp 16.000</span>  
+          </div>
 
+          <div class="total-harga">
+            <p>Total Harga Produk</p>
+            <span id="total-harga"></span>
+          </div>
+        </div>
+        <a href="pembayaran.html" class="btn btn--green">Checkout Sekarang</a>
       </div>
 
   </main>
@@ -193,33 +251,50 @@
 
       function subTotal() {
         const input = document.getElementById("qty");
-        const subtotal = document.getElementById("harga");
+        const subtotal = document.getElementById("total-harga");
         const total = parseInt(input.value) * hargaProduk;
 
         subtotal.innerHTML = "Rp " + total.toLocaleString("id-ID");
       }
 
+      window.onload = subTotal;
+
 
     // Template Leaflet Map
-      const lat = -7.5305;
-      const lng = 110.5950;
-      const map = L.map('map').setView([lat, lng], 9);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const apotekLat = -7.5305;
+        const apotekLng = 110.5950;
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      }).addTo(map);
+        const map = L.map('map').setView([apotekLat, apotekLng], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-      L.marker([lat, lng]).addTo(map)
-        .bindPopup('Apotek Amanah')
-        .openPopup();
+        L.marker([apotekLat, apotekLng]).addTo(map)
+          .bindTooltip("Lokasi Apotek Amanah", {
+            permanent: true,
+            direction: 'top',
+            offset: [-15, -10],
+            className: 'apotek-label'
+          })
+          .openTooltip();
 
-      L.circle([lat, lng], {
-        color: 'blue',
-        fillColor: '#add8e6',
-        fillOpacity: 0.25,
-        radius: 40000
-      }).addTo(map);
+        L.circle([apotekLat, apotekLng], {
+          color: 'blue',
+          fillColor: '#639884',
+          fillOpacity: 0.25,
+          radius: 40000
+        }).addTo(map);
 
+        const userMarker = L.marker([apotekLat, apotekLng], { draggable: true }).addTo(map)
+          .bindPopup('Geser ke lokasi kamu')
+          .openPopup();
 
+        userMarker.on('dragend', function (e) {
+          const pos = e.target.getLatLng();
+          console.log("Lokasi kamu:", pos.lat, pos.lng);
+        });
+      }, 100);
+    });
 
   </script>
 

@@ -2,10 +2,9 @@
 
 :root {
   --primary: #639884;
-  --primary-hover: rgba(122, 170, 152, 0.86);
+  --primary-hover: #7AAA98;
   --secondary: #FBFBFB;
   --text: #383838;
-  --bg: #ffffff;
   --border: 6px;
   --shadow: 1px 1px 4px #cacaca;
   --nav-shadow: 1px 1px 4px #cacaca;
@@ -36,7 +35,7 @@ a, li {
 p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   color: var(--black);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.1px;
   margin: 0 !important;
 }
 
@@ -225,7 +224,7 @@ img {
 /* Button <a> */
   .btn {
     width: 200px;
-    height: 55px;
+    height: 50px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 18px;
