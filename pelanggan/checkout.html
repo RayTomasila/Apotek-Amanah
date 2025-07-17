@@ -39,6 +39,48 @@
   <link rel="stylesheet" href="../public/css/pelanggan/checkout.css">
 
 </head>
+
+<!-- Modal Pembayaran | Bootstrap-->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="paymentModalLabel">Informasi Pembayaran</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+
+        
+        <div class="modal-body">
+          <div>
+            <p class="modal-big-text">Segera Lakukan Pembayaran Sebelum</p>
+            <p id="paymentDeadline">-</p>
+          </div>
+
+          <div class="countdown-container">
+            <p id="countdown">-</p>
+          </div>
+
+          <div>
+            <p class="modal-top-text">Metode Pembayaran </p>
+            <p id="bankName" class="modal-big-text">-</p>
+          </div>
+          <div>
+            <p class="modal-top-text">Nomor Virtual Account</p>
+            <p id="vaNumber" class="modal-big-text">-</p>
+          </div>
+          <div>
+            <p class="modal-top-text">Total Pembayaran </p>
+            <p id="totalBayar" class="modal-big-text">-</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-second ary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal Pembayaran | Bootstrap-->
+
 <body>
   <nav>
     <div class="nav-icon">
@@ -205,7 +247,10 @@
             <span id="total-harga"></span>
           </div>
         </div>
-        <a href="pembayaran.html" class="btn btn--green">Checkout Sekarang</a>
+
+        <!-- Button Bayar -->
+         <a href="#" class="btn btn--green" id="checkoutBtn">Checkout Sekarang</a>
+        <!-- Button Bayar -->
       </div>
 
   </main>
@@ -295,6 +340,84 @@
         });
       }, 100);
     });
+
+
+    // Modal Pembayaran
+    document.getElementById("checkoutBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const selectedBank = document.querySelector('input[name="drone"]:checked');
+      const bankName = selectedBank ? selectedBank.id.toUpperCase() : "Belum dipilih";
+
+      const totalPriceText = document.getElementById("total-harga").innerText;
+
+      document.getElementById("bankName").innerText = bankName;
+      document.getElementById("totalBayar").innerText = totalPriceText;
+
+      const vaMap = {
+        BNI: "8808123456789",
+        BRI: "002123456789",
+        BCA: "014123456789",
+        COD: "N/A"
+      };
+      document.getElementById("vaNumber").innerText = vaMap[bankName] || "-";
+
+
+      const deadline = generateDeadline(24);
+      startCountdown(deadline);
+
+      const modal = new bootstrap.Modal(document.getElementById('paymentModal'));
+      modal.show();
+    });
+
+
+    // Date + C
+    function generateDeadline(hoursFromNow = 1) {
+      const deadline = new Date();
+      deadline.setHours(deadline.getHours() + hoursFromNow);
+      return deadline;
+    }
+
+    function startCountdown(deadline) {
+      const dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+      const monthNames = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+      ];
+
+      const deadlineDay = dayNames[deadline.getDay()];
+      const deadlineDate = deadline.getDate();
+      const deadlineMonth = monthNames[deadline.getMonth()];
+      const deadlineYear = deadline.getFullYear();
+      const deadlineHours = deadline.getHours().toString().padStart(2, '0');
+      const deadlineMinutes = deadline.getMinutes().toString().padStart(2, '0');
+
+      const formatted = `${deadlineDay}, ${deadlineDate} ${deadlineMonth} ${deadlineYear}, ${deadlineHours}:${deadlineMinutes} WIB`;
+      document.getElementById("paymentDeadline").innerText = formatted;
+
+
+      const countdownElement = document.getElementById("countdown");
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = deadline.getTime() - now;
+
+        if (distance <= 0) {
+          countdownElement.innerText = "Waktu habis";
+          return;
+        }
+
+        const hours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerText = `${hours} : ${minutes} : ${seconds}`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
 
   </script>
 

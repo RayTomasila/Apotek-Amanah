@@ -354,3 +354,36 @@ body {
   color: rgb(67, 67, 67);
 }
 /* Metode Pengiriman */
+
+
+/* Modal Pembayaran */
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .modal-top-text {
+    font-size: 16px !important;
+    color: gray;
+    font-weight: 400;
+  }
+
+  .modal-big-text {
+    font-size: 19px;
+    font-weight: 500;
+  }
+  
+  .countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #countdown {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+/* Modal Pembayaran*/
