@@ -59,7 +59,7 @@
 
       <div class="search">
         <img src="../public/assets/pelanggan/landing/search-icon.png" alt="search logo">
-        <input type="text" placeholder="Cari Produk..."></input>
+        <input type="text" id="search-input" placeholder="Cari Produk...">
       </div> 
 
       <div class="dropdown-wrapper">
@@ -74,7 +74,7 @@
     </section>
 
     <section class="produk" id="produk-list">
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="obat">
         <div class="image-container">
           <img src="../public/assets/pelanggan/produk/pamol.png" alt="Produk 1">
         </div>
@@ -87,7 +87,7 @@
         </div>    
       </a>
 
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="obat">
         <div class="warning-resep">
           <p>Butuh Resep</p>
         </div>
@@ -103,7 +103,7 @@
         </div>        
       </a>
 
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="obat">
         <div class="warning-resep">
           <p>Butuh Resep</p>
         </div>
@@ -119,7 +119,7 @@
         </div>        
       </a>
 
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="obat">
         <div class="warning-resep">
           <p>Butuh Resep</p>
         </div>
@@ -135,7 +135,7 @@
         </div>        
       </a>
 
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="alat-kesehatan">
         <div class="image-container">
           <img src="../public/assets/pelanggan/produk/kruk.png" alt="Produk 1">
         </div>
@@ -148,7 +148,7 @@
         </div>        
       </a>
 
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="obat">
         <div class="warning-resep">
           <p>Butuh Resep</p>
         </div>
@@ -164,7 +164,7 @@
         </div>        
       </a>
 
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="obat">
         <div class="warning-resep">
           <p>Butuh Resep</p>
         </div>
@@ -180,7 +180,7 @@
         </div>        
       </a>
 
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="obat">
         <div class="image-container">
           <img src="../public/assets/pelanggan/produk/omeprazole.png" alt="Produk 1">
         </div>
@@ -193,7 +193,7 @@
         </div>        
       </a>    
 
-      <a class="items" href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="obat">
         <div class="warning-resep">
           <p>Butuh Resep</p>
         </div>
@@ -209,7 +209,7 @@
         </div>        
       </a>
 
-      <a class="items"href="detail_produk.html">
+      <a class="items" href="detail_produk.html" data-kategori="alat-kesehatan">
         <div class="image-container">
           <img src="../public/assets/pelanggan/produk/termometer.png" alt="Produk 1">
         </div>
@@ -272,7 +272,33 @@
         itemSelectText: '',
         shouldSort: false
       });
+
+      option.addEventListener('change', function () {
+        filterProduk();
+      });
     });
+
+    const searchInput = document.getElementById('search-input');
+    const produkItems = document.querySelectorAll('#produk-list .items');
+
+    searchInput.addEventListener('input', filterProduk);
+
+    function filterProduk() {
+      const keyword = searchInput.value.toLowerCase();
+      const selectedKategori = document.querySelector('.dropdown-kategori').value;
+
+      produkItems.forEach(item => {
+        const namaProduk = item.querySelector('.produk-nama').textContent.toLowerCase();
+        const kategoriProduk = item.getAttribute('data-kategori');
+
+        const matchKategori = (selectedKategori === 'semua-kategori') || (kategoriProduk === selectedKategori);
+        const matchKeyword = namaProduk.includes(keyword);
+
+        item.style.display = (matchKategori && matchKeyword) ? 'flex' : 'none';
+      });
+    }
   </script>
-  
+
+
+    
 </html>
