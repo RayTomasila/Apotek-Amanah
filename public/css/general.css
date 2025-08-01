@@ -50,10 +50,10 @@ img {
 
 /* Size Buka/Tutup sidebar */
   .container {
-  margin: 20px 20px 27px 320px;
-  transition: margin-left 0.3s ease;
-  color: black;
-  max-width: 100%;
+    margin: 20px 20px 27px 320px;
+    transition: margin-left 0.3s ease;
+    color: black;
+    max-width: 100%;
   }
 
   #main-content {
@@ -87,7 +87,7 @@ img {
 /* CUSTOM SCROLLBAR */
 
 
-/* Admin Top Section untuk page title, search bar, sama kategori */
+/* Admin Top Section untuk container: page title, search bar, dan kategori */
   .admin-top-content {
     display: flex;
     flex-direction: row;
@@ -106,7 +106,7 @@ img {
     flex-direction: row;
     gap: 20px;
   }
-/* Admin Top Section untuk page title, search bar, sama kategori */
+/* Admin Top Section untuk container: page title, search bar, dan kategori */
 
 
 /* Search Bar */

@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../public/css/general.css">
     <link rel="stylesheet" href="../public/css/admin/navbar.css">
-    <link rel="stylesheet" href="../public/css/admin/dashboard.css">
+    <link rel="stylesheet" href="../public/css/admin/akun.css">
 
     <script async src="../public/js/admin.js"></script>
 </head>
@@ -70,7 +70,50 @@
   </nav>
 
   <main class="container" id="main-content">
+    <div class="login">
+      <div class="form-login">
+        <div class="form-left">
+          <div class="logout-button-container">
+            <a class="logout-button" onclick="window.location.href='login.html'">
+              <img src="../public/assets/admin/akun/logout-icon.png" alt="">
+              Log out
+            </a>
+          </div>
+          <img src="../public/assets/admin/login/login-left-image.png" alt="">
+        </div>
     
+        <div class="form-right">
+          <div class="logo">
+            <img src="../public/assets/admin/login/logo-putih.png" alt="Logo">
+            <p class="amanah-logo-text">Amanah</p>
+            <p class="logo-text">Ubah Akun Anda</p>
+          </div>
+    
+          <form class="form-input">
+            <div class="input-container">
+              <div class="input-group">
+                <label for="username">Username</label>
+                <div class="input-wrapper">
+                  <img src="../public/assets/admin/login/username-icon.png" alt="User Icon">
+                  <input type="text" id="username" name="username" placeholder="Admin">
+                </div>
+              </div>
+    
+              <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                  <img src="../public/assets/admin/login/password-icon.png" alt="password Icon">
+                  <input type="password" id="password" name="password" placeholder="Admin">
+                </div>
+              </div>
+            </div>
+    
+            <a class="form-button" onclick="window.location.href='dashboard.html'">Simpan</a>
+          </form>
+    
+        </div>
+      </div>
+    </div>
   </main>
 
 

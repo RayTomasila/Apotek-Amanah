@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+/* Charts */
+
+.charts-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.chart-wrapper {
+  width: 50%;
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+/* Charts */
+
+
+/* dataTable styling */
+#tabelku.dataTable {
+  table-layout: auto !important;
+  font-family: 'Poppins' !important;
+}
+
+#tabelku th,
+#tabelku td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: middle;
+  color: black;
+  font-weight: 400;
+}
+
+#tabelku th {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+#tabelku th:nth-child(4),
+#tabelku td:nth-child(4) {
+  text-align: right !important;
+}
+
+#tabelku th:nth-child(5),
+#tabelku td:nth-child(5) {
+  text-align: right;
+}
+
+.dt-search label {
+  display: none;
+}
+
+.dt-length label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dt-length label::first-line {
+  display: none;
+}
+
+.dt-length label {
+  font-size: 0; 
+}
+
+.dt-length select {
+  font-size: 16px;
+}
+
+.dt-search input,
+.dt-length select {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid var(--text) !important;
+  height: 40px;
+  width: 100%;
+  border-radius: 0 !important;
+  font-size: 17px;
+}
+
+div.dt-container .dt-paging {
+  display: none !important;
+}
+/* dataTable styling */

@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produk</title>
-
+  <title>Laporan</title>
+    
   <link rel="stylesheet" href="../public/css/general.css">
   <link rel="stylesheet" href="../public/css/admin/navbar.css">
-  <link rel="stylesheet" href="../public/css/admin/dashboard.css">
+  <link rel="stylesheet" href="../public/css/admin/laporan.css">
+
 
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <script async src="../public/js/admin.js"></script>
@@ -73,50 +74,162 @@
   </nav>
 
   <main class="container" id="main-content">
-    <div class="charts-container">
-      <div id="chart"></div>
-      <script>
+    <section class="charts-container">
+      <div class="chart-wrapper">
+        <div id="bar-chart"></div>
+        <script>
         function createLineChartOptions(titleText, categories, seriesData) {
           return {
             series: [{
               name: "Series 1",
               data: seriesData
             }],
+
             chart: {
-              height: 350,
+              height: 430,
               type: 'line',
-              zoom: { enabled: false }
+              zoom: { enabled: false },
             },
+
+            colors: ['#639884'],
             dataLabels: { enabled: false },
             stroke: { curve: 'straight' },
             title: {
-              text: titleText,
-              align: 'left'
+              text: 'Penjualan Bulanan',
+              align: 'left',
+              style: {
+                fontFamily: 'Poppins',
+                fontSize: '18px',
+                fontWeight: '600'
+              }
             },
-            grid: {
-              row: {
-                colors: ['transparent', 'transparent'],
-                opacity: 0.5
-              },
-            },
+
             xaxis: {
               categories: categories,
+              axisTicks: { show: false },
+              axisBorder: { show: false },
+              labels: {
+                offsetY: 10,
+                style: {
+                  fontSize: '13px',
+                  colors: '#333'
+                }
+              }
+            },
+            yaxis: {
+              axisTicks: { show: false },
+              axisBorder: { show: false },
+              labels: {
+                style: { fontFamily: 'Poppins' }
+              }
+            },
+            grid: {
+              padding: {
+                bottom: 20
+              },
+              borderColor: '#e0e0e0',
+              xaxis: {
+                lines: { show: true }
+              },
+              yaxis: {
+                lines: { show: false }
+              }
+            },
+            annotations: {
+              yaxis: [
+                {
+                  y: 0,
+                  borderColor: 'transparent',
+                  label: { show: false }
+                }
+              ]
             }
           };
         }
 
-        var options = createLineChartOptions(
-          'Product Trends by Month',
-          ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-          [10, 41, 35, 51, 49, 62, 69, 91, 148]
-        );
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+          var options = createLineChartOptions(
+            'Product Trends by Month',
+            ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+            [15, 0, 50, 170, 50, 150, 90, 110, 100]
+          );
 
-      </script>
-    </div>
+          var chart = new ApexCharts(document.querySelector("#bar-chart"), options);
+          chart.render();
+
+        </script>
+      </div>
+
+      <div class="chart-wrapper">
+        <div id="pie-chart"></div>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script>
+        Highcharts.chart('pie-chart', {
+          chart: {
+            type: 'pie',
+            height: 420,
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+          },
+          title: {
+            text: 'Produk Terjual',
+            align: 'left',
+            style: {
+              fontFamily: 'Poppins',
+              fontSize: '18px',
+              fontWeight: '600'
+            }
+          },
+          tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+          },
+          plotOptions: {
+            pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              startAngle: -90,
+              dataLabels: {
+                enabled: true,
+                connectorShape: 'crookedLine',
+                crookDistance: 20,
+                distance: 40,   
+                format: '{point.name}<br>{point.percentage:.0f}%',
+                style: {
+                  fontFamily: 'Poppins',
+                  fontSize: '15px',
+                  color: '#383838',
+                  fontWeight: '500'
+                }
+              },
+              borderColor: '#fff',
+              borderWidth: 2
+            }
+          },
+          series: [{
+            name: 'Produk',
+            colorByPoint: true,
+            data: [
+              { name: 'Obat Umum', y: 50, color: '#6EC2A6' },
+              { name: 'Resep Dokter', y: 25, color: '#FE9271' },
+              { name: 'Vitamin', y: 25, color: '#0394BD' }
+            ]
+          }]
+        });
+        </script>
+      </div>
+
+    </section>
+
+    <section>
+      <p class="section-title">Riwayat Transaksi</p>
+      <iframe src="laporan-table.html" width="100%" height="520" style="border: none;"></iframe>
+    </section>
   </main>
 
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </html>
