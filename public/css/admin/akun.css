@@ -1,1 +1,230 @@
-    
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+
+.login {
+  width: 100%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-login {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* Login Left Content */
+.form-login .form-left {
+  width: 50%;
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+  padding: 20px;
+  color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-left img {
+  max-width: 100%;
+  max-height: auto;
+}
+
+
+.form-left h2 {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.form-left p {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Login Left Content */
+
+
+/* Login Right Content */
+.form-login .form-right {
+  width: 50%;
+  border-radius: 0 6px 6px 0;
+  padding: 5%;
+  background-color: var(--primary);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.form-right .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.form-right img {
+  max-width: 55px;
+}
+
+.form-right .amanah-logo-text {
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.form-right .logo-text {
+  margin-top: 10px;
+  font-size: 17px;
+  color: white;
+}
+
+.form-input {
+  width: 80%;
+  height: 100%;
+}
+
+.input-container {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 100px;
+}
+
+.form-input .input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.form-input .input-group label {
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+}
+
+.form-input .input-group .input-wrapper {
+  outline: 2px solid #D1D5DB;
+  background-color: white;
+  border-radius: 6px;
+  height: 55px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 12px;
+
+  transition: outline 0.5s ease;
+}
+
+.form-input .input-group .input-wrapper:focus-within {
+  outline: 2px solid var(--primary);
+}
+
+.form-input .input-group .input-wrapper img {
+  width: 18px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.form-input .input-group .input-wrapper p {
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.form-input .input-group .input-wrapper input {
+  width: 100%;
+  font-size: 17px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkbox-group label {
+  font-size: 17px;
+  font-weight: 500; 
+  color: var(--text);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+}
+
+.form-input .form-button {
+  width: 100%;
+  height: 55px;
+  background-color: white;
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color var(--transition); 
+}
+
+.form-input .form-button img {
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}
+
+
+.logout-button-container {
+  width: 100%;
+}
+
+.logout-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  height: 120px;
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 6px;
+
+  background-color: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.logout-button img {
+  padding: 0;
+  margin: 0;
+  height: 60px;
+  width: auto;
+}
